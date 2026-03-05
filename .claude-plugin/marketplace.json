@@ -1,0 +1,30 @@
+{
+  "name": "claude-skills",
+  "owner": {
+    "name": "Remi Huguet",
+    "email": "remi.huguet@gmail.com"
+  },
+  "metadata": {
+    "description": "Reusable Claude Code skills: TDD bugfix, conventional commits, git workflows",
+    "version": "1.0.0",
+    "homepage": "https://github.com/remihuguet/claude-skills"
+  },
+  "plugins": [
+    {
+      "name": "bugfix",
+      "source": "./bugfix",
+      "description": "TDD bug fix workflow: reproduce with failing test, fix, verify, commit",
+      "version": "1.0.0",
+      "category": "development",
+      "keywords": ["bugfix", "tdd", "testing", "red-green"]
+    },
+    {
+      "name": "git-workflows",
+      "source": "./git-workflows",
+      "description": "Conventional commit and push workflows",
+      "version": "1.0.0",
+      "category": "productivity",
+      "keywords": ["git", "commit", "push", "conventional-commits"]
+    }
+  ]
+}
