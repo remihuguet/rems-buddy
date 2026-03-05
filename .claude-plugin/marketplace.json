@@ -1,13 +1,13 @@
 {
-  "name": "claude-skills",
+  "name": "rems-buddy",
   "owner": {
     "name": "Remi Huguet",
     "email": "remi.huguet@gmail.com"
   },
   "metadata": {
-    "description": "Reusable Claude Code skills: coding standards, testing, architecture, git workflows, TDD bugfix",
+    "description": "Rem's buddy: Claude Code skills for coding standards, testing, architecture, git workflows, TDD bugfix",
     "version": "2.0.0",
-    "homepage": "https://github.com/remihuguet/claude-skills"
+    "homepage": "https://github.com/remihuguet/rems-buddy"
   },
   "plugins": [
     {
@@ -16,7 +16,12 @@
       "description": "TDD bug fix workflow: reproduce with failing test, fix, verify, commit",
       "version": "1.0.0",
       "category": "development",
-      "keywords": ["bugfix", "tdd", "testing", "red-green"]
+      "keywords": [
+        "bugfix",
+        "tdd",
+        "testing",
+        "red-green"
+      ]
     },
     {
       "name": "git-workflows",
@@ -24,12 +29,14 @@
       "description": "Conventional commit and push workflows with always-on commit conventions",
       "version": "1.1.0",
       "category": "productivity",
-      "keywords": ["git", "commit", "push", "conventional-commits"],
+      "keywords": [
+        "git",
+        "commit",
+        "push",
+        "conventional-commits"
+      ],
       "skills": [
-        {
-          "name": "conventional-commits",
-          "path": "./git-workflows/conventional-commits/SKILL.md"
-        }
+        "./git-workflows/conventional-commits"
       ]
     },
     {
@@ -38,12 +45,15 @@
       "description": "Coding conventions for self-documenting code: naming, comments, docstrings",
       "version": "1.0.0",
       "category": "development",
-      "keywords": ["naming", "comments", "docstrings", "clean-code", "conventions"],
+      "keywords": [
+        "naming",
+        "comments",
+        "docstrings",
+        "clean-code",
+        "conventions"
+      ],
       "skills": [
-        {
-          "name": "naming-and-comments",
-          "path": "./coding-standards/naming-and-comments/SKILL.md"
-        }
+        "./coding-standards/naming-and-comments"
       ]
     },
     {
@@ -52,20 +62,18 @@
       "description": "Python testing conventions, philosophy, and organization with pytest",
       "version": "1.0.0",
       "category": "development",
-      "keywords": ["python", "testing", "pytest", "tdd", "fakes", "test-organization"],
+      "keywords": [
+        "python",
+        "testing",
+        "pytest",
+        "tdd",
+        "fakes",
+        "test-organization"
+      ],
       "skills": [
-        {
-          "name": "pytest-conventions",
-          "path": "./python-testing/pytest-conventions/SKILL.md"
-        },
-        {
-          "name": "testing-philosophy",
-          "path": "./python-testing/testing-philosophy/SKILL.md"
-        },
-        {
-          "name": "testing-organization",
-          "path": "./python-testing/testing-organization/SKILL.md"
-        }
+        "./python-testing/pytest-conventions",
+        "./python-testing/testing-philosophy",
+        "./python-testing/testing-organization"
       ]
     },
     {
@@ -74,32 +82,22 @@
       "description": "Python backend architecture: hexagonal layers, DDD, CQRS, event-driven patterns",
       "version": "1.0.0",
       "category": "development",
-      "keywords": ["python", "architecture", "hexagonal", "ddd", "cqrs", "event-driven", "ports-adapters"],
+      "keywords": [
+        "python",
+        "architecture",
+        "hexagonal",
+        "ddd",
+        "cqrs",
+        "event-driven",
+        "ports-adapters"
+      ],
       "skills": [
-        {
-          "name": "hexagonal-layers",
-          "path": "./python-architecture/hexagonal-layers/SKILL.md"
-        },
-        {
-          "name": "domain-driven-design",
-          "path": "./python-architecture/domain-driven-design/SKILL.md"
-        },
-        {
-          "name": "cqrs",
-          "path": "./python-architecture/cqrs/SKILL.md"
-        },
-        {
-          "name": "event-driven",
-          "path": "./python-architecture/event-driven/SKILL.md"
-        },
-        {
-          "name": "architecture-pitfalls",
-          "path": "./python-architecture/architecture-pitfalls/SKILL.md"
-        },
-        {
-          "name": "file-organization",
-          "path": "./python-architecture/file-organization/SKILL.md"
-        }
+        "./python-architecture/hexagonal-layers",
+        "./python-architecture/domain-driven-design",
+        "./python-architecture/cqrs",
+        "./python-architecture/event-driven",
+        "./python-architecture/architecture-pitfalls",
+        "./python-architecture/file-organization"
       ]
     }
   ]

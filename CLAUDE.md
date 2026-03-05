@@ -1,4 +1,4 @@
-# claude-skills
+# rems-buddy
 
 This is a Claude Code plugin marketplace repository.
 

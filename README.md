@@ -1,20 +1,20 @@
-# claude-skills
+# rems-buddy
 
-Reusable Claude Code skills packaged as a plugin marketplace. Install once, use across all projects.
+Rem's buddy — reusable Claude Code skills packaged as a plugin marketplace. Install once, use across all projects.
 
 ## Installation
 
 Add to your Claude Code plugins:
 
 ```
-/plugins add /Users/remihuguet/workspaces/claude-skills
+/plugins add /Users/remihuguet/workspaces/rems-buddy
 ```
 
 Or add to `.claude/settings.json`:
 
 ```json
 {
-  "plugins": ["/Users/remihuguet/workspaces/claude-skills"]
+  "plugins": ["/Users/remihuguet/workspaces/rems-buddy"]
 }
 ```
 
