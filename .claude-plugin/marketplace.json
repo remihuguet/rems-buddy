@@ -5,8 +5,8 @@
     "email": "remi.huguet@gmail.com"
   },
   "metadata": {
-    "description": "Reusable Claude Code skills: TDD bugfix, conventional commits, git workflows",
-    "version": "1.0.0",
+    "description": "Reusable Claude Code skills: coding standards, testing, architecture, git workflows, TDD bugfix",
+    "version": "2.0.0",
     "homepage": "https://github.com/remihuguet/claude-skills"
   },
   "plugins": [
@@ -21,10 +21,86 @@
     {
       "name": "git-workflows",
       "source": "./git-workflows",
-      "description": "Conventional commit and push workflows",
-      "version": "1.0.0",
+      "description": "Conventional commit and push workflows with always-on commit conventions",
+      "version": "1.1.0",
       "category": "productivity",
-      "keywords": ["git", "commit", "push", "conventional-commits"]
+      "keywords": ["git", "commit", "push", "conventional-commits"],
+      "skills": [
+        {
+          "name": "conventional-commits",
+          "path": "./git-workflows/conventional-commits/SKILL.md"
+        }
+      ]
+    },
+    {
+      "name": "coding-standards",
+      "source": "./coding-standards",
+      "description": "Coding conventions for self-documenting code: naming, comments, docstrings",
+      "version": "1.0.0",
+      "category": "development",
+      "keywords": ["naming", "comments", "docstrings", "clean-code", "conventions"],
+      "skills": [
+        {
+          "name": "naming-and-comments",
+          "path": "./coding-standards/naming-and-comments/SKILL.md"
+        }
+      ]
+    },
+    {
+      "name": "python-testing",
+      "source": "./python-testing",
+      "description": "Python testing conventions, philosophy, and organization with pytest",
+      "version": "1.0.0",
+      "category": "development",
+      "keywords": ["python", "testing", "pytest", "tdd", "fakes", "test-organization"],
+      "skills": [
+        {
+          "name": "pytest-conventions",
+          "path": "./python-testing/pytest-conventions/SKILL.md"
+        },
+        {
+          "name": "testing-philosophy",
+          "path": "./python-testing/testing-philosophy/SKILL.md"
+        },
+        {
+          "name": "testing-organization",
+          "path": "./python-testing/testing-organization/SKILL.md"
+        }
+      ]
+    },
+    {
+      "name": "python-architecture",
+      "source": "./python-architecture",
+      "description": "Python backend architecture: hexagonal layers, DDD, CQRS, event-driven patterns",
+      "version": "1.0.0",
+      "category": "development",
+      "keywords": ["python", "architecture", "hexagonal", "ddd", "cqrs", "event-driven", "ports-adapters"],
+      "skills": [
+        {
+          "name": "hexagonal-layers",
+          "path": "./python-architecture/hexagonal-layers/SKILL.md"
+        },
+        {
+          "name": "domain-driven-design",
+          "path": "./python-architecture/domain-driven-design/SKILL.md"
+        },
+        {
+          "name": "cqrs",
+          "path": "./python-architecture/cqrs/SKILL.md"
+        },
+        {
+          "name": "event-driven",
+          "path": "./python-architecture/event-driven/SKILL.md"
+        },
+        {
+          "name": "architecture-pitfalls",
+          "path": "./python-architecture/architecture-pitfalls/SKILL.md"
+        },
+        {
+          "name": "file-organization",
+          "path": "./python-architecture/file-organization/SKILL.md"
+        }
+      ]
     }
   ]
 }

@@ -18,9 +18,9 @@ Or add to `.claude/settings.json`:
 }
 ```
 
-## Available Commands
+## Available Plugins
 
-### `/bugfix` — TDD Bug Fix
+### bugfix — TDD Bug Fix (command)
 
 Strict red-green workflow: write a failing test reproducing the bug, implement minimal fix, run full suite, commit.
 
@@ -28,16 +28,35 @@ Strict red-green workflow: write a failing test reproducing the bug, implement m
 /bugfix users can log in with expired tokens
 ```
 
-### `/commit` — Conventional Commit
+### git-workflows — Conventional Commits (command + skill)
 
-Analyzes staged/unstaged changes and creates a properly formatted conventional commit.
+Commands: `/commit`, `/commit-push`
 
-### `/commit-push` — Commit and Push
+Always-on skill: conventional commit message formatting rules.
 
-Same as `/commit` but also pushes to the remote tracking branch.
+### coding-standards — Naming and Comments (skill)
+
+Always-on guidance for domain naming, intent-revealing identifiers, comment strategies, and minimal docstrings.
+
+### python-testing — Testing Conventions (skill)
+
+Three skills providing always-on guidance:
+- **pytest-conventions** — Function-style tests, fixtures, parametrize, exception testing
+- **testing-philosophy** — Behavior-driven testing, diamond approach, fakes over mocks
+- **testing-organization** — Three-tier strategy: unit, integration, e2e
+
+### python-architecture — Backend Architecture Patterns (skill)
+
+Six skills for Python backend architecture:
+- **hexagonal-layers** — Five-layer architecture (domain, service, adapters, views, entrypoints)
+- **domain-driven-design** — Value objects, entities, aggregates, repositories, events, commands
+- **cqrs** — Command/query separation
+- **event-driven** — MessageBus, UnitOfWork, handler patterns
+- **architecture-pitfalls** — Common anti-patterns to avoid
+- **file-organization** — Module organization principles
 
 ## Adding New Skills
 
-1. Create a new directory with a `commands/` subdirectory
-2. Add command `.md` files with YAML frontmatter (`allowed-tools`, `description`)
-3. Update `.claude-plugin/marketplace.json` to register the plugin
+1. Create a plugin directory with skill subdirectories containing `SKILL.md` files
+2. For commands, add a `commands/` subdirectory with `.md` files using YAML frontmatter
+3. Update `.claude-plugin/marketplace.json` to register the plugin and its skills
