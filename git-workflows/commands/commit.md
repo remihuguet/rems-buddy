@@ -1,5 +1,5 @@
 ---
-allowed-tools: Bash(git add:*), Bash(git status:*), Bash(git commit:*), Bash(git diff:*), Bash(git log:*), Bash(git branch:*)
+allowed-tools: Bash(git add:*), Bash(git status:*), Bash(git commit:*), Bash(git diff:*), Bash(git log:*), Bash(git branch:*), Bash(git checkout:*), Bash(git switch:*), AskUserQuestion
 description: Create a conventional commit
 ---
 
@@ -14,6 +14,16 @@ description: Create a conventional commit
 
 Based on the above changes, create a single git commit following conventional commits format.
 
+### Step 1: Branch safety check
+
+Before committing, verify you are NOT on `main` or `master` branch.
+
+- If on `main` or `master`: create a new branch before committing. Default branch name prefix is `rh/`. Suggest a branch name based on the changes (e.g., `rh/add-auth-flow`) and ask the user to validate before creating it.
+- If on any other branch: proceed normally.
+- If unsure about what to do: ask the user.
+
+### Step 2: Commit
+
 Rules:
 - Analyze changes and determine the appropriate type: `feat`, `fix`, `docs`, `chore`, `refactor`, `test`, `style`, `ci`
 - Determine scope from the area of code changed
@@ -21,4 +31,4 @@ Rules:
 - Stage specific files (not `git add -A` or `git add .`)
 - If there are no changes to commit, do nothing
 
-You have the capability to call multiple tools in a single response. Stage and create the commit using a single message. Do not use any other tools or do anything else. Do not send any other text or messages besides these tool calls.
+You have the capability to call multiple tools in a single response. Stage and create the commit using a single message. Do not use any other tools or do anything else.

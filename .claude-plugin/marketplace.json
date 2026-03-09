@@ -27,7 +27,7 @@
       "name": "git-workflows",
       "source": "./git-workflows",
       "description": "Conventional commit and push workflows with always-on commit conventions",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "category": "productivity",
       "keywords": [
         "git",
@@ -36,7 +36,8 @@
         "conventional-commits"
       ],
       "skills": [
-        "./git-workflows/conventional-commits"
+        "./git-workflows/conventional-commits",
+        "./git-workflows/branch-safety"
       ]
     },
     {
