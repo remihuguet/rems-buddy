@@ -100,6 +100,22 @@
         "./python-architecture/architecture-pitfalls",
         "./python-architecture/file-organization"
       ]
+    },
+    {
+      "name": "prompt-optimization",
+      "source": "./prompt-optimization",
+      "description": "Always-on prompt interpretation: resolve ambiguity from context, decompose vague requests, minimize unnecessary questions",
+      "version": "1.0.0",
+      "category": "productivity",
+      "keywords": [
+        "prompt",
+        "interpretation",
+        "clarity",
+        "intent"
+      ],
+      "skills": [
+        "./prompt-optimization/intent-clarity"
+      ]
     }
   ]
 }
