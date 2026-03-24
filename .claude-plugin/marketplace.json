@@ -36,8 +36,8 @@
         "conventional-commits"
       ],
       "skills": [
-        "./git-workflows/conventional-commits",
-        "./git-workflows/branch-safety"
+        "./skills/conventional-commits",
+        "./skills/branch-safety"
       ]
     },
     {
@@ -54,7 +54,7 @@
         "conventions"
       ],
       "skills": [
-        "./coding-standards/naming-and-comments"
+        "./skills/naming-and-comments"
       ]
     },
     {
@@ -72,9 +72,9 @@
         "test-organization"
       ],
       "skills": [
-        "./python-testing/pytest-conventions",
-        "./python-testing/testing-philosophy",
-        "./python-testing/testing-organization"
+        "./skills/pytest-conventions",
+        "./skills/testing-philosophy",
+        "./skills/testing-organization"
       ]
     },
     {
@@ -93,12 +93,12 @@
         "ports-adapters"
       ],
       "skills": [
-        "./python-architecture/hexagonal-layers",
-        "./python-architecture/domain-driven-design",
-        "./python-architecture/cqrs",
-        "./python-architecture/event-driven",
-        "./python-architecture/architecture-pitfalls",
-        "./python-architecture/file-organization"
+        "./skills/hexagonal-layers",
+        "./skills/domain-driven-design",
+        "./skills/cqrs",
+        "./skills/event-driven",
+        "./skills/architecture-pitfalls",
+        "./skills/file-organization"
       ]
     },
     {
@@ -114,7 +114,7 @@
         "intent"
       ],
       "skills": [
-        "./prompt-optimization/intent-clarity"
+        "./skills/intent-clarity"
       ]
     }
   ]
