@@ -19,6 +19,7 @@ This is a Claude Code plugin marketplace repository.
 | `coding-standards` | Skill | Naming, comments, and docstring conventions |
 | `python-testing` | Skill | Pytest conventions, testing philosophy, test organization |
 | `python-architecture` | Skill | Hexagonal layers, DDD, CQRS, event-driven, anti-patterns |
+| `prompt-optimization` | Skill | Always-on prompt interpretation and intent clarity |
 
 ## Conventions
 
