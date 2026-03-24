@@ -1,0 +1,9 @@
+{
+  "name": "python-testing",
+  "description": "Python testing conventions, philosophy, and organization with pytest",
+  "version": "1.0.0",
+  "author": {
+    "name": "Remi Huguet",
+    "email": "remi.huguet@gmail.com"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "git-workflows",
+  "description": "Conventional commit and push workflows with always-on commit conventions",
+  "version": "1.2.0",
+  "author": {
+    "name": "Remi Huguet",
+    "email": "remi.huguet@gmail.com"
+  }
+}
