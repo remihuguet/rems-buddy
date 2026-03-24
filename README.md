@@ -55,8 +55,29 @@ Six skills for Python backend architecture:
 - **architecture-pitfalls** — Common anti-patterns to avoid
 - **file-organization** — Module organization principles
 
-## Adding New Skills
+### prompt-optimization — Intent Clarity (skill)
 
-1. Create a plugin directory with skill subdirectories containing `SKILL.md` files
-2. For commands, add a `commands/` subdirectory with `.md` files using YAML frontmatter
-3. Update `.claude-plugin/marketplace.json` to register the plugin and its skills
+Always-on prompt interpretation: resolve ambiguity from context, decompose vague requests, minimize unnecessary questions.
+
+## Plugin Structure
+
+```
+plugin-name/
+├── .claude-plugin/
+│   └── plugin.json          # Plugin manifest (name, description, version, author)
+├── commands/                 # On-demand slash commands
+│   └── my-command.md
+├── skills/                   # Always-on behavioral guidance
+│   └── my-skill/
+│       └── SKILL.md
+└── README.md
+```
+
+## Adding New Plugins
+
+1. Create a plugin directory following the structure above
+2. Add `.claude-plugin/plugin.json` with name, description, version, and author
+3. Place skills under `skills/<skill-name>/SKILL.md`
+4. Place commands under `commands/<command-name>.md` with YAML frontmatter
+5. Register the plugin in `.claude-plugin/marketplace.json`
+6. Skill paths in `marketplace.json` are relative to the plugin source (e.g., `./skills/my-skill`)
