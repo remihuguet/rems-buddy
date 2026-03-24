@@ -6,8 +6,9 @@ This is a Claude Code plugin marketplace repository.
 
 - `.claude-plugin/marketplace.json` — registers all plugins
 - Each plugin is a subdirectory containing:
+  - `.claude-plugin/plugin.json` — plugin manifest (name, description, version, author)
   - `commands/` folder with slash command definitions (on-demand workflows)
-  - Skill subdirectories with `SKILL.md` files (always-on behavioral guidance)
+  - `skills/` folder with skill subdirectories, each containing a `SKILL.md` file (always-on behavioral guidance)
   - `README.md` describing the plugin
 
 ## Plugins
@@ -28,4 +29,6 @@ This is a Claude Code plugin marketplace repository.
 - Command frontmatter uses `allowed-tools` for scoped tool permissions
 - Commands support `$ARGUMENTS` for user input and `!` backtick syntax for dynamic context injection
 - SKILL.md files use YAML frontmatter with `name` and `description` fields
+- Skills must be placed under `skills/<skill-name>/SKILL.md` (not directly at plugin root)
+- Skill paths in `marketplace.json` are relative to the plugin source directory (e.g., `./skills/my-skill`)
 - Skills provide always-on guidance; commands provide on-demand workflows
