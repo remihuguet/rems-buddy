@@ -21,6 +21,7 @@ This is a Claude Code plugin marketplace repository.
 | `python-testing` | Skill | Pytest conventions, testing philosophy, test organization |
 | `python-architecture` | Skill | Hexagonal layers, DDD, CQRS, event-driven, anti-patterns |
 | `prompt-optimization` | Skill | Always-on prompt interpretation and intent clarity |
+| `glab-review` | Command | Load and triage unresolved GitLab MR review comments |
 
 ## Conventions
 

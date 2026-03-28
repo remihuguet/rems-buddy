@@ -116,6 +116,19 @@
       "skills": [
         "./skills/intent-clarity"
       ]
+    },
+    {
+      "name": "glab-review",
+      "source": "./glab-review",
+      "description": "Load and triage unresolved GitLab MR review comments for the current branch",
+      "version": "1.0.0",
+      "category": "productivity",
+      "keywords": [
+        "gitlab",
+        "merge-request",
+        "code-review",
+        "glab"
+      ]
     }
   ]
 }

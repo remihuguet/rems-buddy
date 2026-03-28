@@ -1,0 +1,9 @@
+{
+  "name": "glab-review",
+  "description": "Load and triage unresolved GitLab MR review comments for the current branch",
+  "version": "1.0.0",
+  "author": {
+    "name": "Remi Huguet",
+    "email": "remi.huguet@gmail.com"
+  }
+}
