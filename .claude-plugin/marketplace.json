@@ -116,6 +116,23 @@
       "skills": [
         "./skills/intent-clarity"
       ]
+    },
+    {
+      "name": "attribution-policy",
+      "source": "./attribution-policy",
+      "description": "Always-on rule: do not add 'Generated with Claude Code' or 'Co-Authored-By: Claude' attribution to commits, PRs, MRs, or docs",
+      "version": "1.0.0",
+      "category": "productivity",
+      "keywords": [
+        "attribution",
+        "commit",
+        "pr",
+        "mr",
+        "policy"
+      ],
+      "skills": [
+        "./skills/no-ai-attribution"
+      ]
     }
   ]
 }
