@@ -1,0 +1,9 @@
+{
+  "name": "issue-workflow",
+  "description": "Notion-issue-driven development loop: read spec, analyze, plan, implement, open MR, and sync progress back to Notion",
+  "version": "1.0.0",
+  "author": {
+    "name": "Remi Huguet",
+    "email": "remi.huguet@gmail.com"
+  }
+}

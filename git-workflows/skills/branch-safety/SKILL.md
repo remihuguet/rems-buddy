@@ -9,7 +9,7 @@ description: "Always-on branch safety rules: never commit or push directly to ma
 
 ### Never commit or push directly to main or master
 
-Before any commit or push operation, check the current branch. If on `main` or `master`, create a new feature branch first.
+Before any commit or push operation, check the current branch. If on `main` or `master`, create a new feature branch first. Changes reach the default branch through a merge request (GitLab MR), never a direct push.
 
 ```
 # Good

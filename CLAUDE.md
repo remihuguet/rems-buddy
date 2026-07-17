@@ -16,7 +16,8 @@ This is a Claude Code plugin marketplace repository.
 | Plugin | Type | Description |
 |---|---|---|
 | `bugfix` | Command | TDD bug fix workflow: reproduce, fix, verify, commit |
-| `git-workflows` | Command + Skill | Conventional commit workflows + always-on commit conventions |
+| `git-workflows` | Command + Skill | Conventional commit + GitLab MR workflows (`/commit`, `/commit-push`, `/fix-mr`) + always-on commit/branch conventions |
+| `issue-workflow` | Command + Skill | Notion-issue-driven loop (`/issue`): analyze, plan, implement, open MR, sync back to Notion |
 | `coding-standards` | Skill | Naming, comments, and docstring conventions |
 | `python-testing` | Skill | Pytest conventions, testing philosophy, test organization |
 | `python-architecture` | Skill | Hexagonal layers, DDD, CQRS, event-driven, anti-patterns |
