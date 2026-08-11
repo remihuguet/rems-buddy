@@ -1,7 +1,7 @@
 {
   "name": "attribution-policy",
-  "description": "Always-on attribution policy: never add 'Generated with Claude Code' or 'Co-Authored-By: Claude' lines to commits, MRs, PRs, or docs",
-  "version": "1.0.0",
+  "description": "Never add AI/tool attribution to commits, MRs, PRs, or docs \u2014 skill guidance plus a PreToolUse hook that blocks it deterministically",
+  "version": "2.0.0",
   "author": {
     "name": "Remi Huguet",
     "email": "remi.huguet@gmail.com"

@@ -1,19 +1,25 @@
 # git-workflows
 
-Conventional commit, push, and GitLab merge request workflows for Claude Code with branch safety.
+Conventional commits, GitLab merge requests, and branch safety.
 
-## Skills
+## Workflow skills (`disable-model-invocation` — you trigger these)
 
-- **conventional-commits** — Always-on commit message formatting rules (Conventional Commits spec)
-- **branch-safety** — Always-on branch safety: never commit/push to main/master, auto-create `rh/` prefixed branches, merge to the default branch via MR
+- `/commit` — one conventional commit from the current changes
+- `/commit-push` — commit, push, open or update a GitLab MR
+- `/fix-mr [mr]` — pull failing CI logs, fix root causes, address CodeRabbit / reviewer comments
 
-## Commands
+## Reference skills (Claude loads these when relevant)
 
-- `/commit` — Create a conventional commit from current changes (with branch safety check)
-- `/commit-push` — Commit, push, and open or update a GitLab merge request (with branch safety check)
-- `/fix-mr` — Fix a GitLab MR: pull failing CI job logs, reproduce and fix locally, and address CodeRabbit / reviewer comments
+- **conventional-commits** — allowed type list, subject format, 72-char limit, `BREAKING CHANGE:` footer
+- **branch-safety** — `rh/` prefix, never commit or push on `main`/`master`
+
+## Hook
+
+`hooks/hooks.json` registers a `PreToolUse` guard on `Bash(git *)` that denies `git commit` and `git push` while on `main` or `master`. Read-only git commands are unaffected.
+
+The skill and the hook are both intentional: the skill explains the rule so Claude branches correctly on its own, the hook makes it unskippable when context fills up. `scripts/guard-branch.sh` fails open if `jq` is unavailable rather than blocking every git command.
 
 ## Notes
 
-- MR creation uses the GitLab CLI (`glab`). Authenticate once with `glab auth login`.
-- MR titles/descriptions never include AI attribution (see the `attribution-policy` plugin).
+- MR creation uses `glab`. Authenticate once with `glab auth login`.
+- Attribution is handled separately by the `attribution-policy` plugin.
