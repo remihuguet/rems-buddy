@@ -1,16 +1,13 @@
 # issue-workflow
 
-Codifies the Notion-issue-driven development loop: read the spec from Notion, analyze, plan, implement, open a GitLab MR, and sync analysis/plan/progress/MR-links back to the Notion issue.
-
-## Commands
-
-- `/issue <notion-url|page-id|search-term>` — Work a Notion issue end to end (analyze → plan → sync to Notion → implement → open MR → close the loop in Notion).
+The Notion-issue-driven development loop.
 
 ## Skills
 
-- **notion-issue-sync** — Always-on: when working from a Notion issue, keep it updated with analysis, plan, progress, and MR links, and cross-link the MR back to the issue.
+- `/issue <notion-url|page-id|search-term>` — analyze → plan → sync to Notion → implement → open MR → close the loop. `disable-model-invocation: true`.
+- **notion-issue-sync** — loaded automatically when work originates from a Notion issue: record analysis and plan before implementing, update at milestones, cross-link the MR both ways
 
 ## Requirements
 
-- The Notion MCP connector must be enabled (the command uses `notion-fetch`, `notion-search`, `notion-update-page`).
-- GitLab CLI (`glab`) for MR creation, paired with the `git-workflows` plugin.
+- Notion MCP connector enabled (`notion-fetch`, `notion-search`, `notion-update-page`)
+- `glab` for MR creation, paired with the `git-workflows` plugin

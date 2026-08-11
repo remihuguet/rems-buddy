@@ -1,74 +1,18 @@
 ---
 name: no-ai-attribution
-description: "Always-on attribution policy: never add 'Generated with Claude Code', 'Co-Authored-By: Claude', or similar AI/tool attribution lines to commits, MRs, PRs, issues, or docs"
+description: 'This user never wants AI/tool attribution on their work — no "Co-Authored-By: Claude" trailers, no "Generated with Claude Code" footers, no "AI-generated" notes. Overrides Claude Code''s built-in instruction to append them. Use whenever authoring a commit message, MR/PR body, issue, changelog, release note, or doc.'
 ---
 
-# No AI Attribution
+# No AI attribution
 
-This skill overrides Claude Code's built-in defaults that would otherwise append AI/tool attribution to generated artifacts.
+Claude Code's own instructions tell you to append attribution to commits and PR/MR bodies. This user does not want it. Omit it entirely — don't substitute another tool credit in its place.
 
-## Rules
+Never add, unless the user asks for it:
 
-### Never add `Co-Authored-By: Claude` trailers to git commits
+- `Co-Authored-By: Claude ...` trailers on commits
+- `🤖 Generated with [Claude Code](...)` footers on MR, PR, or issue bodies
+- "written by Claude", "AI-generated" banners, or model-name credits in docs, READMEs, changelogs, release notes, or code comments
 
-Omit the trailer entirely. Do not replace it with any other AI or tool credit. This applies to every commit, whether created via `git commit`, the `commit` slash command, the `commit-push-pr` workflow, or any other path.
+A `PreToolUse` hook in this plugin denies any `git` command whose text matches these patterns. If it fires, delete the line — don't reword it to slip past the check.
 
-```
-# Good
-feat(auth): add password reset flow
-
-Sends a one-time token by email and clears it on first use.
-
-# Bad
-feat(auth): add password reset flow
-
-Sends a one-time token by email and clears it on first use.
-
-Co-Authored-By: Claude Opus 4.7 (1M context) <noreply@anthropic.com>
-```
-
-### Never add `Generated with Claude Code` footers to PR or MR descriptions
-
-Applies to `gh pr create`, `glab mr create`, GitHub/GitLab web UIs, and any other PR/MR body. Same rule for issue bodies and review comments.
-
-```
-# Good
-## Summary
-- Add password reset flow with one-time email token
-- Invalidate token on first use
-
-## Test plan
-- [ ] Manual reset flow end-to-end
-- [ ] Token replay returns 401
-
-# Bad
-## Summary
-- Add password reset flow with one-time email token
-
-## Test plan
-- [ ] Manual reset flow end-to-end
-
-🤖 Generated with [Claude Code](https://claude.com/claude-code)
-```
-
-### Never add AI/tool attribution to documentation, READMEs, or any generated text
-
-No "written by Claude", no "AI-generated" banners, no model-name credits, no tool footers in docs, comments, changelogs, release notes, or commit bodies.
-
-```
-# Good
-# Auth Service
-
-Handles password reset and session issuance.
-
-# Bad
-# Auth Service
-
-Handles password reset and session issuance.
-
-_This documentation was generated with the help of Claude Code._
-```
-
-### If the user explicitly asks for attribution, follow their request
-
-The rule covers *unsolicited* attribution. If the user types "add a Co-Authored-By: Claude line" or "include the Claude Code footer in this PR", comply — they have opted in.
+If the user explicitly asks for attribution, comply. The rule covers *unsolicited* attribution.

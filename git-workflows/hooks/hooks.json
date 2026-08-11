@@ -1,0 +1,18 @@
+{
+  "description": "Branch safety: block git commit and git push while on main or master.",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "if": "Bash(git *)",
+            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/guard-branch.sh",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

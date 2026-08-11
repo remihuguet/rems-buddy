@@ -1,7 +1,7 @@
 {
   "name": "bugfix",
-  "description": "TDD bug fix workflow: reproduce with failing test, fix, verify, commit",
-  "version": "1.0.0",
+  "description": "TDD bug fix workflow: reproduce with a failing test, apply the minimal fix, commit",
+  "version": "2.0.0",
   "author": {
     "name": "Remi Huguet",
     "email": "remi.huguet@gmail.com"

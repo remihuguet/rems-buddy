@@ -1,42 +1,12 @@
 ---
 name: branch-safety
-description: "Always-on branch safety rules: never commit or push directly to main/master, create feature branches with rh/ prefix"
+description: Branch rules for this user's repos — rh/ naming prefix, and never commit or push on main/master. Use before creating a branch, committing, or pushing.
 ---
 
-# Branch Safety
+# Branch safety
 
-## Rules
+- Never commit or push on `main` or `master`. Changes reach the default branch through a GitLab MR.
+- New branches: `rh/<short-kebab-description>` — e.g. `rh/fix-login-redirect`.
+- Already on `main` with uncommitted work? `git switch -c rh/<name>` carries it across.
 
-### Never commit or push directly to main or master
-
-Before any commit or push operation, check the current branch. If on `main` or `master`, create a new feature branch first. Changes reach the default branch through a merge request (GitLab MR), never a direct push.
-
-```
-# Good
-git switch -c rh/add-user-auth
-git commit -m "feat(auth): add user authentication"
-
-# Bad
-git commit -m "feat(auth): add user authentication"  # while on main
-git push origin main  # pushing directly to main
-```
-
-### Use `rh/` prefix for new branch names
-
-When creating a branch, use the `rh/` prefix followed by a short, descriptive kebab-case name.
-
-```
-# Good
-rh/add-user-auth
-rh/fix-login-redirect
-rh/refactor-api-client
-
-# Bad
-feature/add-user-auth
-add-user-auth
-my-branch
-```
-
-### When in doubt, ask the user
-
-If unsure whether to create a new branch or which name to use, ask the user before proceeding. Suggest a default name based on the changes with `rh/` prefix.
+A `PreToolUse` hook in this plugin denies `git commit` and `git push` on `main`/`master`. If it fires, switch branch — don't look for a way around it.

@@ -1,9 +1,10 @@
 # python-testing
 
-Python testing conventions, philosophy, and organization.
+Testing strategy and pytest mechanics for Python projects. Both skills are gated to `**/*.py` via skill `paths`.
 
 ## Skills
 
-- **pytest-conventions** -- Function-style tests, fixtures, parametrize, exception testing
-- **testing-philosophy** -- Behavior-driven testing, diamond approach, fakes over mocks
-- **testing-organization** -- Three-tier strategy: unit (fakes), integration (real deps), e2e (critical paths)
+- **testing-strategy** — three-tier `unit`/`integration`/`e2e` split, "unit test" as behavior through an entry point with fakes, fakes over mocks, `test_{subject}__should_{expected_behavior}` naming, Arrange/Act/Assert
+- **pytest-conventions** — function-style tests over classes, fixtures and factory fixtures instead of `setUp`, `parametrize`, `pytest.raises` with `match`
+
+`testing-philosophy` and `testing-organization` were merged into `testing-strategy`; they overlapped on what a unit test is and where it lives.
