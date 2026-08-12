@@ -121,6 +121,25 @@
       ]
     },
     {
+      "name": "standards-review",
+      "source": "./standards-review",
+      "description": "Standards-scoped MR/PR review: conformity to the standards the repo declares for itself, architectural drift, and normative docs that no longer match the code",
+      "version": "1.0.0",
+      "category": "development",
+      "keywords": [
+        "review",
+        "merge-request",
+        "pull-request",
+        "standards",
+        "conformity",
+        "architecture",
+        "drift",
+        "adr",
+        "gitlab",
+        "github"
+      ]
+    },
+    {
       "name": "issue-workflow",
       "source": "./issue-workflow",
       "description": "Notion-issue-driven development loop: read spec, analyze, plan, implement, open MR, sync progress back to Notion",

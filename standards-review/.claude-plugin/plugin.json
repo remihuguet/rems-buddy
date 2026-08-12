@@ -1,0 +1,9 @@
+{
+  "name": "standards-review",
+  "description": "Standards-scoped MR/PR review: does the change conform to the standards the repo declares for itself, and do the normative docs it ships still match the code it ships",
+  "version": "1.0.0",
+  "author": {
+    "name": "Remi Huguet",
+    "email": "remi.huguet@gmail.com"
+  }
+}

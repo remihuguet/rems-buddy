@@ -55,6 +55,18 @@ Reads the MR description and every spec it links, then checks two things the dif
 
 Rates out of 10 across fidelity / coverage presence / coverage completeness / test design rather than approving. Posts to the MR only with `--post`.
 
+### `standards-review` — MR review scoped to conformity
+
+```
+/standards-review <mr url or number>
+```
+
+The companion lens to `behavior-review`: not "did it do what it promised", but "was it built the way this repo says to build things". Reads the repo's own declared rules first — `AGENTS.md`, `CONTRIBUTING.md`, ADRs, the written standards, the lint config — and applies them in strict precedence over any skill in this marketplace. Delegates the rule text to the `python-architecture` / `python-testing` / `coding-standards` plugins rather than restating it.
+
+Also reviews **documents as code**: a snippet pasted into `AGENTS.md` or an ADR has no link to the symbol it copies, so nothing fails when they diverge. Carries a drift catalog of eleven failure modes with grep-able triggers, split portable / DDD-CQRS.
+
+Rates out of 10 across layering / declared-standard conformity / drift risk / normative-doc accuracy. Posts to the MR only with `--post`.
+
 ### `issue-workflow` — Notion issue loop
 
 ```
