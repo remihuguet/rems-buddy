@@ -103,6 +103,24 @@
       ]
     },
     {
+      "name": "behavior-review",
+      "source": "./behavior-review",
+      "description": "Behavior-scoped MR/PR review: does the change do what it promised, and is every behavior it changed pinned by a test",
+      "version": "1.0.0",
+      "category": "development",
+      "keywords": [
+        "review",
+        "merge-request",
+        "pull-request",
+        "acceptance",
+        "testing",
+        "test-coverage",
+        "gitlab",
+        "github",
+        "spec"
+      ]
+    },
+    {
       "name": "issue-workflow",
       "source": "./issue-workflow",
       "description": "Notion-issue-driven development loop: read spec, analyze, plan, implement, open MR, sync progress back to Notion",
