@@ -45,6 +45,16 @@ Overrides Claude Code's built-in instruction to append `Co-Authored-By: Claude` 
 
 RED (a test that must fail for the predicted reason) → GREEN (minimal fix) → commit.
 
+### `behavior-review` — MR review scoped to behavior
+
+```
+/behavior-review <mr url or number>
+```
+
+Reads the MR description and every spec it links, then checks two things the diff alone can't answer: does the change keep the promises it made, and is every behavior it changed pinned by a test. Extends past the diff — when a change works by altering a shared dependency, it enumerates that dependency's consumers, which is where the untested behavior hides.
+
+Rates out of 10 across fidelity / coverage presence / coverage completeness / test design rather than approving. Posts to the MR only with `--post`.
+
 ### `issue-workflow` — Notion issue loop
 
 ```
