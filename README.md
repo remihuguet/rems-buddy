@@ -65,7 +65,7 @@ Read the issue, analyze, plan, sync the plan back to Notion, implement on a feat
 
 ### `coding-standards`
 
-Docstrings off by default, comments explain *why*, domain vocabulary in names.
+Docstrings off by default, comments only where naming and abstraction can't carry the context, domain vocabulary in names.
 
 ### `python-testing` · `python-architecture`
 
