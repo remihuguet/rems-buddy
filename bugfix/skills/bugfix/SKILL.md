@@ -31,4 +31,11 @@ Strict TDD. The order is the point — don't reorder or collapse steps.
 
 **4. Commit.** `fix(<scope>): <description>`, staging only the files you touched.
 
+**5. Sweep the siblings.** With the fix committed, grep for the same shape elsewhere — the other
+call sites of the function you guarded, the other files carrying the pattern you just fixed. Report
+them as one named pattern plus its locations, not one line each.
+
+This widens the *report*, never the diff: the fix stays narrow to the bug you were asked about, and
+the siblings are input for a follow-up issue. Finding nothing is a valid result — say so in one line.
+
 Scope: this bug. Anything else you notice goes in your report, not in the diff.
