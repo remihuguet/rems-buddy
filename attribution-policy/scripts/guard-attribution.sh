@@ -12,6 +12,11 @@ command -v jq >/dev/null 2>&1 || exit 0
 
 cmd=$(printf '%s' "$input" | jq -r '.tool_input.command // ""')
 
+# Only commands that author a message can carry attribution. Without this the
+# pattern also matches its own literal in a `git log --grep` or a `git show`
+# piped to grep, which blocks reading history about attribution.
+printf '%s' "$cmd" | grep -Eq '(^|[;&|(] *)git +(-[^ ]+ +)*(commit|tag|notes|merge)\b' || exit 0
+
 printf '%s' "$cmd" | grep -Eqi \
   'co-authored-by:[[:space:]]*claude|generated with[[:space:]]*\[?claude code|🤖[[:space:]]*generated with' \
   || exit 0
