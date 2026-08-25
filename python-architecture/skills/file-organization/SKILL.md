@@ -1,7 +1,7 @@
 ---
 name: file-organization
 description: Module and file layout rules for this user's Python projects — group first and split on evidence, no utils/helpers/common modules, __init__.py as the public API. Use when creating new Python modules or deciding where code belongs.
-paths: "**/*.py"
+disable-model-invocation: true
 ---
 
 # File organization

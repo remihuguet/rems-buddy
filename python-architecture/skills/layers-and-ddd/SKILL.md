@@ -1,7 +1,7 @@
 ---
 name: layers-and-ddd
 description: Five-layer hexagonal architecture and DDD building blocks for this user's Python backends — layer responsibilities, dependency direction, ports and adapters, value objects, entities, aggregates, and repositories. Use when adding or reviewing code in a Python service that has domain/, service/, adapters/, views/, or entrypoints/ directories.
-paths: "**/*.py"
+disable-model-invocation: true
 ---
 
 # Layers and DDD

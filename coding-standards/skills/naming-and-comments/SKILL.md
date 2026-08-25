@@ -1,6 +1,7 @@
 ---
 name: naming-and-comments
 description: This user's opinionated rules for docstrings, comments, and naming — no docstrings by default, comments stripped to the vital minimum and only for context that naming and abstraction cannot carry, never a changelog. Use when writing or reviewing non-trivial application code.
+disable-model-invocation: true
 ---
 
 # Naming and comments

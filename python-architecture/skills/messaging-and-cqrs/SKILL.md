@@ -1,7 +1,7 @@
 ---
 name: messaging-and-cqrs
 description: MessageBus, UnitOfWork, and command/query separation for this user's Python backends — handler signatures, event collection from aggregates, transaction boundaries, and read-side views that bypass the domain. Use when touching a MessageBus, UnitOfWork, command/event handler, or a views/ query in a Python service.
-paths: "**/*.py"
+disable-model-invocation: true
 ---
 
 # Messaging and CQRS
