@@ -7,6 +7,7 @@ Conventional commits, GitLab merge requests, and branch safety.
 - `/commit` — one conventional commit from the current changes
 - `/commit-push` — commit, push, open or update a GitLab MR
 - `/fix-mr [mr]` — pull failing CI logs, fix root causes, address CodeRabbit / reviewer comments
+- `/triage-finding [mr|paste]` — decide whether a third-party finding is real *here* before anyone acts on it
 
 ## Reference skills (Claude loads these when relevant)
 
