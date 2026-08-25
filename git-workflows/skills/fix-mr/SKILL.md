@@ -27,10 +27,10 @@ Resolve `$ARGUMENTS` to a concrete MR — blank means the MR for the current bra
 
 `glab mr view <mr> --comments`. For each actionable comment, either apply the fix or note why you disagree. Group trivial nits into one commit. Skip resolved and purely informational threads.
 
-Where a comment asserts something about intended behaviour that the code and tests don't settle, ask rather than guessing — reviewers are sometimes wrong, and silently complying can bake in a bug.
+Where a comment asserts something about intended behaviour that the code and tests don't settle, ask rather than guessing — reviewers are sometimes wrong, and silently complying can bake in a bug. Where a whole comment's validity is the question rather than its wording, run `/triage-finding` on it first and act on the verdict.
 
 ### Finish
 
 Commit with conventional messages, splitting CI fixes from review fixes where that aids review. Push to update the MR.
 
-Report: which jobs were red and why, which comments you addressed, and which you deliberately didn't act on with your reasoning.
+Report: which jobs were red and why, which comments you addressed, and which you deliberately didn't act on with your reasoning. Name anything the change leaves dead — an unused wrapper, flag, column, template or setting — as a follow-up, not a fix in this MR.
