@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Rem's buddy: Claude Code skills and hooks for coding standards, testing, architecture, git workflows, TDD bugfix",
-    "version": "3.0.0",
+    "version": "4.0.0",
     "homepage": "https://github.com/remihuguet/rems-buddy"
   },
   "plugins": [
@@ -90,7 +90,7 @@
     {
       "name": "attribution-policy",
       "source": "./attribution-policy",
-      "description": "Never add AI/tool attribution to commits, MRs, PRs, or docs — skill guidance plus a PreToolUse hook that blocks it deterministically",
+      "description": "Never add AI/tool attribution to commits, MRs, PRs, or docs \u2014 skill guidance plus a PreToolUse hook that blocks it deterministically",
       "version": "2.0.0",
       "category": "productivity",
       "keywords": [
@@ -100,43 +100,6 @@
         "mr",
         "policy",
         "hooks"
-      ]
-    },
-    {
-      "name": "behavior-review",
-      "source": "./behavior-review",
-      "description": "Behavior-scoped MR/PR review: does the change do what it promised, and is every behavior it changed pinned by a test",
-      "version": "1.0.0",
-      "category": "development",
-      "keywords": [
-        "review",
-        "merge-request",
-        "pull-request",
-        "acceptance",
-        "testing",
-        "test-coverage",
-        "gitlab",
-        "github",
-        "spec"
-      ]
-    },
-    {
-      "name": "standards-review",
-      "source": "./standards-review",
-      "description": "Standards-scoped MR/PR review: conformity to the standards the repo declares for itself, architectural drift, and normative docs that no longer match the code",
-      "version": "1.0.0",
-      "category": "development",
-      "keywords": [
-        "review",
-        "merge-request",
-        "pull-request",
-        "standards",
-        "conformity",
-        "architecture",
-        "drift",
-        "adr",
-        "gitlab",
-        "github"
       ]
     },
     {

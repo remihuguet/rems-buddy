@@ -1,6 +1,6 @@
 # python-architecture
 
-Hexagonal architecture, DDD, and messaging patterns for Python backends. All three skills are gated to `**/*.py` via skill `paths`, so they stay quiet in non-Python repos.
+Hexagonal architecture, DDD, and messaging patterns for Python backends. Slash-only: invoke a skill by name. The work repos already inline these rules into their own `AGENTS.md`, so Claude does not need to fetch them there.
 
 ## Skills
 

@@ -4,8 +4,7 @@ Conventional commits, GitLab merge requests, and branch safety.
 
 ## Workflow skills (`disable-model-invocation` — you trigger these)
 
-- `/commit` — one conventional commit from the current changes
-- `/commit-push` — commit, push, open or update a GitLab MR
+- `/commit-push` — commit, then push and open or update a GitLab MR unless told to stop at the commit
 - `/fix-mr [mr]` — pull failing CI logs, fix root causes, address CodeRabbit / reviewer comments
 - `/triage-finding [mr|paste]` — decide whether a third-party finding is real *here* before anyone acts on it
 

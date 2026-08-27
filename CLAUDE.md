@@ -18,20 +18,21 @@ This matters for how they're written, so don't reintroduce the old framing:
 - Only a skill's `description` sits in context permanently. The body loads when the skill is invoked — by name, or by Claude judging it relevant from that description.
 - **The `description` is the trigger.** It states what the skill covers *and when to use it*. A description without a trigger condition either misfires or never fires.
 - Once loaded, the body stays in context for the rest of the session. Every line is a recurring cost — keep bodies to the rules that differ from what Claude does anyway.
-- `paths:` gates a skill to matching files (the Python skills use `paths: "**/*.py"`), so it can't fire in an unrelated repo.
-- `disable-model-invocation: true` on the workflow skills means only Rem triggers them, and their descriptions stay out of context entirely.
+- `disable-model-invocation: true` means only Rem triggers the skill, and its description stays out of context entirely. Every skill here now carries it except `no-ai-attribution`, `branch-safety`, `conventional-commits`, and `notion-issue-sync`.
+- **The standards skills are slash-only on purpose.** The work repos inline the same rules into their own `AGENTS.md` via Packmind, so those rules are already in context unconditionally and the model never needs to fetch them — across 118 sessions and 154 Python edits, not one of them was ever invoked. They stay here as the banked copy, reachable by name in a repo that has no standards of its own.
+- `paths:` is not used. It gates how a skill is surfaced *to the model*, which does nothing once model invocation is off.
 
 ## Plugins
 
 | Plugin | Provides | Description |
 |---|---|---|
 | `bugfix` | `/bugfix` | TDD bug fix workflow: RED, GREEN, commit |
-| `git-workflows` | `/commit`, `/commit-push`, `/fix-mr` + 2 skills + hook | Conventional commits, GitLab MRs; hook denies commit/push on `main` |
+| `git-workflows` | `/commit-push`, `/fix-mr`, `/triage-finding` + 2 skills + hook | Conventional commits, GitLab MRs; hook denies commit/push on `main` |
 | `issue-workflow` | `/issue` + 1 skill | Notion-issue loop: analyze, plan, implement, MR, sync back |
 | `attribution-policy` | 1 skill + hook | No AI attribution anywhere; hook blocks it in commits |
-| `coding-standards` | 1 skill | Docstring, comment, and naming conventions |
-| `python-testing` | 2 skills | Testing strategy and pytest conventions (`paths`-gated) |
-| `python-architecture` | 3 skills | Hexagonal layers, DDD, MessageBus/CQRS (`paths`-gated) |
+| `coding-standards` | `/naming-and-comments` | Docstring, comment, and naming conventions |
+| `python-testing` | 2 slash-only skills | Testing strategy and pytest conventions |
+| `python-architecture` | 3 slash-only skills | Hexagonal layers, DDD, MessageBus/CQRS |
 
 ## Conventions
 
@@ -40,7 +41,7 @@ This matters for how they're written, so don't reintroduce the old framing:
 - Run `claude plugin validate ./<plugin>` after editing frontmatter — a YAML parse error makes a skill load with *silently empty* metadata rather than failing loudly
 - Quote any `description` containing `: ` (a colon plus space breaks unquoted YAML scalars)
 - Prefer a hook over a skill for anything that must not be skippable; a skill is advice, a hook is a guarantee
-- Test a hook script by piping a sample `PreToolUse` payload to it before trusting it
+- Test a hook script by piping a sample `PreToolUse` payload to it before trusting it — see `attribution-policy/scripts/guard-attribution.test.sh`. A guard that matches its pattern anywhere in the command blocks reading about the rule as well as breaking it
 
 ## Writing skills for current models
 

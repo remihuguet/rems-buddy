@@ -1,7 +1,7 @@
 ---
 name: pytest-conventions
 description: Pytest mechanics for this user's Python projects — function-style tests over classes, fixtures and factory fixtures instead of setUp, parametrize, and pytest.raises. Use when writing or refactoring pytest tests.
-paths: "**/*.py"
+disable-model-invocation: true
 ---
 
 # Pytest conventions

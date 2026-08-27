@@ -1,7 +1,7 @@
 ---
 name: testing-strategy
 description: This user's testing strategy for Python projects — the three-tier unit/integration/e2e split, what "unit test" means here (behavior through entry points with fakes, not per-class tests), fakes over mocks, and test naming. Use when adding, reorganizing, or reviewing Python tests.
-paths: "**/*.py"
+disable-model-invocation: true
 ---
 
 # Testing strategy

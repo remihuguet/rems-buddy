@@ -1,6 +1,6 @@
 # python-testing
 
-Testing strategy and pytest mechanics for Python projects. Both skills are gated to `**/*.py` via skill `paths`.
+Testing strategy and pytest mechanics for Python projects. Slash-only: invoke a skill by name. The work repos already inline these rules into their own `AGENTS.md`, so Claude does not need to fetch them there.
 
 ## Skills
 
