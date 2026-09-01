@@ -1,7 +1,7 @@
 {
   "name": "attribution-policy",
-  "description": "Never add AI/tool attribution to commits, MRs, PRs, or docs \u2014 skill guidance plus a PreToolUse hook that blocks it deterministically",
-  "version": "2.0.0",
+  "description": "Never add AI/tool attribution to commits, MRs, PRs, or docs — skill guidance plus a PreToolUse hook that blocks it deterministically",
+  "version": "2.1.0",
   "author": {
     "name": "Remi Huguet",
     "email": "remi.huguet@gmail.com"

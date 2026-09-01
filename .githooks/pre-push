@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+# pre-push: refuse to push plugin changes that don't bump that plugin's
+# plugin.json version. The marketplace refresh skips version-unchanged
+# plugins, so an unbumped push ships nothing to installed caches — the
+# fix exists in source and nobody gets it.
+#
+# Enable once per clone: git config core.hooksPath .githooks
+set -uo pipefail
+
+zero=0000000000000000000000000000000000000000
+fail=0
+
+while read -r _local_ref local_sha _remote_ref remote_sha; do
+  [ "$local_sha" = "$zero" ] && continue
+
+  if [ "$remote_sha" = "$zero" ]; then
+    base=$(git merge-base origin/main "$local_sha" 2>/dev/null) || continue
+  else
+    base=$remote_sha
+  fi
+
+  for manifest in $(git ls-tree -r --name-only "$local_sha" | grep '\.claude-plugin/plugin\.json$'); do
+    plugin_dir=${manifest%/.claude-plugin/plugin.json}
+    [ "$plugin_dir" = "$manifest" ] && continue  # repo-root manifest has no plugin dir
+
+    git diff --quiet "$base" "$local_sha" -- "$plugin_dir/" && continue
+
+    old_ver=$(git show "$base:$manifest" 2>/dev/null | jq -r .version 2>/dev/null) || old_ver=""
+    new_ver=$(git show "$local_sha:$manifest" 2>/dev/null | jq -r .version 2>/dev/null) || new_ver=""
+
+    # A plugin absent at base is new — any version is a bump.
+    [ -z "$old_ver" ] && continue
+
+    if [ "$old_ver" = "$new_ver" ]; then
+      echo "pre-push: '$plugin_dir' changed but $manifest still says $old_ver — bump it or the cache never refreshes." >&2
+      fail=1
+    fi
+  done
+done
+
+exit $fail

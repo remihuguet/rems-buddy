@@ -14,7 +14,6 @@
       "name": "bugfix",
       "source": "./bugfix",
       "description": "TDD bug fix workflow: reproduce with a failing test, apply the minimal fix, commit",
-      "version": "2.0.0",
       "category": "development",
       "keywords": [
         "bugfix",
@@ -27,7 +26,6 @@
       "name": "git-workflows",
       "source": "./git-workflows",
       "description": "Conventional commit, push, and GitLab MR workflows, plus a PreToolUse hook enforcing branch safety",
-      "version": "2.0.0",
       "category": "productivity",
       "keywords": [
         "git",
@@ -46,7 +44,6 @@
       "name": "coding-standards",
       "source": "./coding-standards",
       "description": "Opinionated naming, comment, and docstring conventions for self-documenting code",
-      "version": "2.0.0",
       "category": "development",
       "keywords": [
         "naming",
@@ -60,7 +57,6 @@
       "name": "python-testing",
       "source": "./python-testing",
       "description": "Python testing strategy and pytest conventions: three-tier split, fakes over mocks",
-      "version": "2.0.0",
       "category": "development",
       "keywords": [
         "python",
@@ -75,7 +71,6 @@
       "name": "python-architecture",
       "source": "./python-architecture",
       "description": "Python backend architecture: hexagonal layers, DDD building blocks, MessageBus/UnitOfWork, CQRS",
-      "version": "2.0.0",
       "category": "development",
       "keywords": [
         "python",
@@ -90,8 +85,7 @@
     {
       "name": "attribution-policy",
       "source": "./attribution-policy",
-      "description": "Never add AI/tool attribution to commits, MRs, PRs, or docs \u2014 skill guidance plus a PreToolUse hook that blocks it deterministically",
-      "version": "2.0.0",
+      "description": "Never add AI/tool attribution to commits, MRs, PRs, or docs — skill guidance plus a PreToolUse hook that blocks it deterministically",
       "category": "productivity",
       "keywords": [
         "attribution",
@@ -106,7 +100,6 @@
       "name": "issue-workflow",
       "source": "./issue-workflow",
       "description": "Notion-issue-driven development loop: read spec, analyze, plan, implement, open MR, sync progress back to Notion",
-      "version": "2.0.0",
       "category": "productivity",
       "keywords": [
         "notion",
