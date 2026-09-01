@@ -37,6 +37,7 @@ This matters for how they're written, so don't reintroduce the old framing:
 ## Conventions
 
 - Conventional commits for changes to this repo
+- **Releasing:** any change under a plugin directory bumps that plugin's `plugin.json` version in the same commit — the marketplace refresh skips version-unchanged plugins, so an unbumped push ships nothing to installed caches. Enforced by `.githooks/pre-push` (`git config core.hooksPath .githooks` once per clone). After merge: update the marketplace, `/reload-plugins`, verify the skill is listed. `plugin.json` is the only place a version lives; `marketplace.json` entries carry none
 - Register new plugins in `marketplace.json`; skills inside a plugin need no entry
 - Run `claude plugin validate ./<plugin>` after editing frontmatter — a YAML parse error makes a skill load with *silently empty* metadata rather than failing loudly
 - Quote any `description` containing `: ` (a colon plus space breaks unquoted YAML scalars)
