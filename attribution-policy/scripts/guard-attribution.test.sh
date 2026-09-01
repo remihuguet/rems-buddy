@@ -28,4 +28,13 @@ $T\""                                                                           
 check "chained commit WITH trailer"         "cd /tmp && git commit -m \"x
 
 $T\""                                                                                   deny
+check "env-prefixed commit WITH trailer"    "FOO=1 git commit -m \"x
+
+$T\""                                                                                   deny
+check "-c option commit WITH trailer"       "git -c a=b commit -m \"x
+
+$T\""                                                                                   deny
+check "-C path commit WITH trailer"         "git -C /tmp commit -m \"x
+
+$T\""                                                                                   deny
 exit $FAILED
