@@ -52,4 +52,4 @@ Claude 5-generation models handle a lot that older harnesses spelled out. Before
 - Don't add verification scaffolding ("run the suite and confirm it passes", "double-check your work"). Per Anthropic's Opus 5 guidance this causes over-verification. Domain-specific ordering, like TDD's test-must-fail-first, is different and stays
 - Don't restrict tool use in ways that fight the harness — e.g. "ask only one question at a time" conflicts with `AskUserQuestion` batching up to four
 - Do state scope limits explicitly; scope creep is a real failure mode worth constraining
-- Keep exactly one rule per topic across the whole marketplace. Two skills giving different test-naming conventions is worse than neither
+- Keep exactly one rule per topic across the whole marketplace. Two skills giving different test-naming conventions is worse than neither. One deliberate mirror: `bugfix` restates the test-naming rule owned by `testing-strategy`, because testing-strategy is slash-only and never in context when `/bugfix` runs in a repo without its own standards — keep the two in sync

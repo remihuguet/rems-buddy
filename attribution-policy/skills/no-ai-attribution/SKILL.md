@@ -13,6 +13,6 @@ Never add, unless the user asks for it:
 - `🤖 Generated with [Claude Code](...)` footers on MR, PR, or issue bodies
 - "written by Claude", "AI-generated" banners, or model-name credits in docs, READMEs, changelogs, release notes, or code comments
 
-A `PreToolUse` hook in this plugin denies any `git` command whose text matches these patterns. If it fires, delete the line — don't reword it to slip past the check.
+A `PreToolUse` hook in this plugin denies a `git commit`, `tag`, `notes`, or `merge` whose message matches these patterns. If it fires, delete the line — don't reword it to slip past the check. MR, PR, and doc bodies are outside the hook's reach — this skill is what enforces the rule there.
 
 If the user explicitly asks for attribution, comply. The rule covers *unsolicited* attribution.

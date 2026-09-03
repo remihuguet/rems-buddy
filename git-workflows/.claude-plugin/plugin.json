@@ -1,7 +1,7 @@
 {
   "name": "git-workflows",
   "description": "Conventional commit, push, and GitLab MR workflows, plus a PreToolUse hook enforcing branch safety",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "author": {
     "name": "Remi Huguet",
     "email": "remi.huguet@gmail.com"

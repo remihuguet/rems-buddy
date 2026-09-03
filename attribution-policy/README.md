@@ -8,6 +8,6 @@ Never add `Co-Authored-By: Claude`, `Generated with Claude Code`, or similar AI/
 
 ## Hook
 
-`hooks/hooks.json` registers a `PreToolUse` guard on `Bash(git *)` that denies any command whose text carries an attribution trailer or footer, and tells Claude to delete the line rather than reword it past the check.
+`hooks/hooks.json` registers a `PreToolUse` guard on `Bash(git *)` that denies a `git commit`, `tag`, `notes`, or `merge` whose text carries an attribution trailer or footer, and tells Claude to delete the line rather than reword it past the check. Read-only git commands pass, so history *about* attribution stays readable. MR/PR bodies go out through `glab`/`gh`, outside the guard — there the skill is the only enforcement.
 
 The hook lives here rather than in `git-workflows` so this plugin enforces its own rule when installed alone. `scripts/guard-attribution.sh` fails open if `jq` is unavailable.
