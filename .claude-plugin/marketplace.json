@@ -85,7 +85,7 @@
     {
       "name": "attribution-policy",
       "source": "./attribution-policy",
-      "description": "Never add AI/tool attribution to commits, MRs, PRs, or docs — skill guidance plus a PreToolUse hook that blocks it deterministically",
+      "description": "Never add AI/tool attribution to commits, MRs, PRs, or docs — skill guidance plus a PreToolUse hook that blocks it in git commit/tag/notes/merge",
       "category": "productivity",
       "keywords": [
         "attribution",

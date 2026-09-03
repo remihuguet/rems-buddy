@@ -90,9 +90,8 @@ plugin-name/
 
 1. Create the directory above and add `.claude-plugin/plugin.json`
 2. Write `skills/<name>/SKILL.md` — the `description` must say **what it covers and when to use it**, since that's the whole trigger surface
-3. Add `paths:` if the skill is language- or framework-specific
-4. Add `disable-model-invocation: true` if it's a workflow with side effects that only you should trigger
-5. Register the plugin in `.claude-plugin/marketplace.json`
-6. `claude plugin validate ./<plugin>` — a frontmatter YAML error loads the skill with silently empty metadata rather than erroring at runtime
+3. Add `disable-model-invocation: true` if it's a workflow with side effects that only you should trigger
+4. Register the plugin in `.claude-plugin/marketplace.json`
+5. `claude plugin validate ./<plugin>` — a frontmatter YAML error loads the skill with silently empty metadata rather than erroring at runtime
 
 See `CLAUDE.md` for the conventions on writing skills that don't fight current models.

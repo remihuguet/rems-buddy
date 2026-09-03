@@ -9,5 +9,6 @@ The Notion-issue-driven development loop.
 
 ## Requirements
 
-- Notion MCP connector enabled (`notion-fetch`, `notion-search`, `notion-update-page`)
+- Notion MCP connector enabled (`notion-fetch`, `notion-search`, `notion-update-page`, `notion-create-comment`)
+- The `/issue` skill's `allowed-tools` pins the **claude.ai connector** tool prefix (`mcp__claude_ai_Notion__…`). A standalone Notion MCP server exposes `mcp__notion__…` instead, so on a machine using that, widen the skill's `allowed-tools` accordingly
 - `glab` for MR creation, paired with the `git-workflows` plugin
