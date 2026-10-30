@@ -35,13 +35,13 @@ Overrides Claude Code's built-in instruction to append `Co-Authored-By: Claude` 
 
 **Enforced by hook:** a `PreToolUse` guard denies a `git commit`, `tag`, `notes`, or `merge` whose text carries an attribution trailer or footer. Other git commands pass through, so you can still read history *about* attribution.
 
-### `issue-workflow` — Notion issue loop
+### `issue-workflow` — GitLab issue loop
 
 ```
-/issue https://notion.so/...
+/issue libracyber/simcore/delivery#147
 ```
 
-Read the issue, analyze, plan, sync the plan back to Notion, implement on a feature branch, open the MR, cross-link both ways. Requires the Notion MCP server.
+Read the delivery issue, analyze, plan, post the plan as an issue comment, implement on a feature branch, open the MR, link it to the issue. Requires `glab` logged in to `code.libracyber.com`.
 
 ## Plugin structure
 

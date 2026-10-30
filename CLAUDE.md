@@ -18,7 +18,7 @@ This matters for how they're written, so don't reintroduce the old framing:
 - Only a skill's `description` sits in context permanently. The body loads when the skill is invoked — by name, or by Claude judging it relevant from that description.
 - **The `description` is the trigger.** It states what the skill covers *and when to use it*. A description without a trigger condition either misfires or never fires.
 - Once loaded, the body stays in context for the rest of the session. Every line is a recurring cost — keep bodies to the rules that differ from what Claude does anyway.
-- `disable-model-invocation: true` means only Rem triggers the skill, and its description stays out of context entirely. Every skill here now carries it except `no-ai-attribution`, `branch-safety`, `conventional-commits`, and `notion-issue-sync`.
+- `disable-model-invocation: true` means only Rem triggers the skill, and its description stays out of context entirely. Every skill here now carries it except `no-ai-attribution`, `branch-safety`, `conventional-commits`, and `gitlab-issue-sync`.
 - **Team rules live elsewhere, never here.** Coding, testing and architecture standards are Packmind standards inlined into each work repo's `AGENTS.md`; team workflows (issues, MRs, Aikido, triage) are skills in the `simcore` plugin. This marketplace keeps only Rem's personal guards. The banked standards copies were deleted on 2026-10-30: never invoked, and a second copy only drifts.
 - `paths:` is not used. It gates how a skill is surfaced *to the model*, which does nothing once model invocation is off.
 
@@ -27,7 +27,7 @@ This matters for how they're written, so don't reintroduce the old framing:
 | Plugin | Provides | Description |
 |---|---|---|
 | `git-workflows` | `/fix-mr` + 2 skills + hook | Conventional commits, GitLab MRs; hook denies commit/push on `main` |
-| `issue-workflow` | `/issue` + 1 skill | Notion-issue loop: analyze, plan, implement, MR, sync back |
+| `issue-workflow` | `/issue` + 1 skill | GitLab-issue loop: analyze, plan, implement, MR, sync back |
 | `attribution-policy` | 1 skill + hook | No AI attribution anywhere; hook blocks it in commits |
 
 ## Conventions

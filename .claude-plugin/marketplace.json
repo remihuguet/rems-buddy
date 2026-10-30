@@ -45,10 +45,9 @@
     {
       "name": "issue-workflow",
       "source": "./issue-workflow",
-      "description": "Notion-issue-driven development loop: read spec, analyze, plan, implement, open MR, sync progress back to Notion",
+      "description": "GitLab-issue-driven development loop: read the delivery issue, analyze, plan, implement, open MR, post progress back on the issue",
       "category": "productivity",
       "keywords": [
-        "notion",
         "issue",
         "workflow",
         "gitlab",
