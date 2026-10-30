@@ -1,9 +1,0 @@
-{
-  "name": "python-testing",
-  "description": "Python testing strategy and pytest conventions: three-tier split, fakes over mocks",
-  "version": "2.0.0",
-  "author": {
-    "name": "Remi Huguet",
-    "email": "remi.huguet@gmail.com"
-  }
-}

@@ -27,7 +27,7 @@ Resolve `$ARGUMENTS` to a concrete MR — blank means the MR for the current bra
 
 `glab mr view <mr> --comments`. For each actionable comment, either apply the fix or note why you disagree. Group trivial nits into one commit. Skip resolved and purely informational threads.
 
-Where a comment asserts something about intended behaviour that the code and tests don't settle, ask rather than guessing — reviewers are sometimes wrong, and silently complying can bake in a bug. Where a whole comment's validity is the question rather than its wording, run `/triage-finding` on it first and act on the verdict.
+Where a comment asserts something about intended behaviour that the code and tests don't settle, ask rather than guessing — reviewers are sometimes wrong, and silently complying can bake in a bug. Where a whole comment's validity is the question rather than its wording, give it a verdict first: real only with a concrete failure path here, named in one line; otherwise decline it with the mechanism that makes it wrong.
 
 ### Reply and resolve
 

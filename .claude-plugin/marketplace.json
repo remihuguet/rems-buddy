@@ -5,27 +5,15 @@
     "email": "remi.huguet@gmail.com"
   },
   "metadata": {
-    "description": "Rem's buddy: Claude Code skills and hooks for coding standards, testing, architecture, git workflows, TDD bugfix",
+    "description": "Rem's buddy: personal Claude Code guards — branch safety, conventional commits, no AI attribution, MR fixing, GitLab issue loop",
     "version": "4.0.0",
     "homepage": "https://github.com/remihuguet/rems-buddy"
   },
   "plugins": [
     {
-      "name": "bugfix",
-      "source": "./bugfix",
-      "description": "TDD bug fix workflow: reproduce with a failing test, apply the minimal fix, commit",
-      "category": "development",
-      "keywords": [
-        "bugfix",
-        "tdd",
-        "testing",
-        "red-green"
-      ]
-    },
-    {
       "name": "git-workflows",
       "source": "./git-workflows",
-      "description": "Conventional commit, push, and GitLab MR workflows, plus a PreToolUse hook enforcing branch safety",
+      "description": "Conventional commits, GitLab MR fixing, plus a PreToolUse hook enforcing branch safety",
       "category": "productivity",
       "keywords": [
         "git",
@@ -38,48 +26,6 @@
         "hooks",
         "ci",
         "coderabbit"
-      ]
-    },
-    {
-      "name": "coding-standards",
-      "source": "./coding-standards",
-      "description": "Opinionated naming, comment, and docstring conventions for self-documenting code",
-      "category": "development",
-      "keywords": [
-        "naming",
-        "comments",
-        "docstrings",
-        "clean-code",
-        "conventions"
-      ]
-    },
-    {
-      "name": "python-testing",
-      "source": "./python-testing",
-      "description": "Python testing strategy and pytest conventions: three-tier split, fakes over mocks",
-      "category": "development",
-      "keywords": [
-        "python",
-        "testing",
-        "pytest",
-        "tdd",
-        "fakes",
-        "test-organization"
-      ]
-    },
-    {
-      "name": "python-architecture",
-      "source": "./python-architecture",
-      "description": "Python backend architecture: hexagonal layers, DDD building blocks, MessageBus/UnitOfWork, CQRS",
-      "category": "development",
-      "keywords": [
-        "python",
-        "architecture",
-        "hexagonal",
-        "ddd",
-        "cqrs",
-        "event-driven",
-        "ports-adapters"
       ]
     },
     {
