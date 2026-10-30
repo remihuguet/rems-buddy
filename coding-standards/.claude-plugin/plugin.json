@@ -1,9 +1,0 @@
-{
-  "name": "coding-standards",
-  "description": "Opinionated naming, comment, and docstring conventions for self-documenting code",
-  "version": "2.0.0",
-  "author": {
-    "name": "Remi Huguet",
-    "email": "remi.huguet@gmail.com"
-  }
-}

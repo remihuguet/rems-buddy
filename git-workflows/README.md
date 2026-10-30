@@ -4,9 +4,7 @@ Conventional commits, GitLab merge requests, and branch safety.
 
 ## Workflow skills (`disable-model-invocation` — you trigger these)
 
-- `/commit-push` — commit, then push and open or update a GitLab MR unless told to stop at the commit
 - `/fix-mr [mr]` — pull failing CI logs, fix root causes, address CodeRabbit / reviewer comments
-- `/triage-finding [mr|paste]` — decide whether a third-party finding is real *here* before anyone acts on it
 
 ## Reference skills (Claude loads these when relevant)
 
@@ -21,5 +19,5 @@ The skill and the hook are both intentional: the skill explains the rule so Clau
 
 ## Notes
 
-- MR creation uses `glab`. Authenticate once with `glab auth login`.
+- `/fix-mr` uses `glab`. Authenticate once with `glab auth login`. MR creation is `/simcore:create-merge-request` (team template)
 - Attribution is handled separately by the `attribution-policy` plugin.
